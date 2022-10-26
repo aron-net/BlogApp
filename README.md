@@ -24,7 +24,7 @@
 
 ## ERD Diagram structure 
 
-![](./log/blog_app_erd.png)
+![](./blog_app_erd.png)
 
 
 ## Getting Started ➡️
@@ -49,7 +49,7 @@ $ ruby --version
 
 1. Clone the GitHub repository using the  this link 
 ```--sh
-    https://github.com/aron-helu/BlogApp.git
+  $ git clone https://github.com/aron-helu/BlogApp.git
 ```
 2. Checkout to the `dev` branch
 3. Run `$ bundle install` in your terminal to install all gems required to run the app.
