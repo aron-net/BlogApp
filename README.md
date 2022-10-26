@@ -41,18 +41,24 @@ $ git --version
 
 Likewise for Ruby installation.
 
-```--sh 
+```
 $ ruby --version
 ``` 
 
 ### Setup
 
 1. Clone the GitHub repository using the  this link 
-```--sh
+```
   $ git clone https://github.com/aron-helu/BlogApp.git
 ```
-2. Checkout to the `dev` branch
-3. Run `$ bundle install` in your terminal to install all gems required to run the app.
+2. Checkout to the branch
+```
+$ git checkout dev
+```
+3. Run in your terminal to install all gems required to run the app.
+```
+$ bundle install
+``` 
 4. Go to your terminal and run the app with the following command:
 ```
 $ rails server
