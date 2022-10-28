@@ -66,7 +66,18 @@ $ rails server
 - **Navigate:** to http://localhost:3000/ 
 
 
-## Authors :writing_hand:
+## Run tests
+
+To install rspec, i the terminal kindly run this command
+```
+$ gem install rspec
+```
+To run tests. please run this command
+```
+$ rspec spec/#{filename}_spec.rb
+```
+
+## Author :writing_hand:
 
 :man_technologist:  **Aron Abraham** :writing_hand: 
 
