@@ -14,9 +14,9 @@ RSpec.describe 'Users', type: :request do
 
     it 'the response body includes correct placeholder text' do
       expect(response.body).to include('Find me in app/views/users/index.html.erb')
-    end  
+    end
   end
-  
+
   describe 'GET /show' do
     before(:each) { get user_path(1) }
     it 'is a success' do
