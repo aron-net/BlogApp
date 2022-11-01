@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
-    before(:each) { get posts_path }
+    before(:each) { get '/users/1/posts' }
 
     it 'is a success' do
       expect(response).to have_http_status(:ok)
@@ -13,12 +13,12 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'the response body includes correct placeholder text' do
-      expect(response.body).to include('Find me in app/views/post/index.html.erb')
+      expect(response.body).to include('Find me in app/views/posts/index.html.erb')
     end
   end
 
   describe 'GET /show' do
-    before(:each) { get user_path(1) }
+    before(:each) { get '/users/1/posts/show' }
     it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
@@ -26,7 +26,7 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to render_template('show')
     end
     it 'matches the placeholder text with the respone body' do
-      expect(response.body).to include('Post#show')
+      expect(response.body).to include('Posts#show')
     end
   end
 end

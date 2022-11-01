@@ -4,12 +4,12 @@ RSpec.describe 'Users', type: :request do
   describe 'GET /index' do
     before(:each) { get users_path }
 
-    it 'is a success' do
-      expect(response).to have_http_status(:ok)
+    it 'index action renders the corect template' do
+      expect(response).to render_template(:index)
     end
 
-    it "renders 'index' template" do
-      expect(response).to render_template('index')
+    it 'the repose is correct' do
+      expect(response.status).to eq(200)
     end
 
     it 'the response body includes correct placeholder text' do
@@ -19,13 +19,16 @@ RSpec.describe 'Users', type: :request do
 
   describe 'GET /show' do
     before(:each) { get user_path(1) }
-    it 'is a success' do
-      expect(response).to have_http_status(:ok)
+
+    it 'show action renders the correct template' do
+      expect(response).to render_template(:show)
     end
-    it "renders 'show' template" do
-      expect(response).to render_template('show')
+
+    it 'show respone is correct' do
+      expect(response.status).to eq(200)
     end
-    it 'matches the placeholder text with the respone body' do
+
+    it 'the response body includes correct placeholder text' do
       expect(response.body).to include('Users#show')
     end
   end
