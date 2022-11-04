@@ -1,2 +1,14 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<h1>Post Details</h1>
+ <div class='bio font'>
+    <h4>Post:<%= @post.id %> by <%= @post.user.name %></h4> 
+     <div class='padd'>
+        <h5>Comments:<%= @post.comments_counter %></h5>
+        <h5>Likes:<%= @post.likes_counter %></h5>
+     </div>
+    <h4><%= @post.text %></h4>
+    <hr/>
+    <% @post.recent_comment.each do |comment| %>
+        <h5><%= comment.user.name %>: <%= comment.text %> </h5>
+    <% end %>
+</div>
+<a href='/users/'><button>Go back</button></a>

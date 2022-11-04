@@ -13,3 +13,77 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   background-color: #e0e7f0;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 14px;
+   color: #333;
+   line-height: 1.5;
+   margin: 0;
+   padding: 100px;
+   box-sizing: content-box;
+ }
+ 
+ .user-card {
+   display: flex;
+   gap: 10%;
+   width: 100%;
+   justify-content: space-between;
+   margin-bottom: 10px;
+ }
+ 
+ .user-container {
+   padding-top: 20px;
+   
+ }
+ 
+ .user-count {
+   padding-top: 40px;
+ }
+ 
+ .img {
+   border: 4px solid rgb(5, 5, 5);
+ }
+ 
+ .wid {
+   width: 200px;
+ }
+ 
+ .bio {
+   border: 4px solid rgb(5, 5, 5);
+   padding-left: 2%;
+   margin-bottom: 2%;
+ }
+ 
+ button {
+   width: 80px;
+   height: 30px;
+   background-color: rgb(121, 127, 214);
+   color: rgb(2, 0, 0);
+   border: 1px solid rgb(66, 64, 64);
+   border-radius: 5px;
+   font-size: 12px;
+   margin-top: 50px;
+ }
+ 
+ .see {
+   background-color: rgb(110, 159, 216);
+   color: rgb(2, 0, 0);
+   border: 1px solid rgb(5, 5, 5);
+   border-radius: 5px;
+   font-size: 12px;
+   width: fit-content;
+ }
+ 
+ .font {
+   font-size: 20px;
+   border: 3px solid rgb(5, 5, 5);
+ }
+ 
+ .padd {
+   font-size: larger;
+   display: flex;
+   margin-left: 50%;
+   gap: 20px;
+ }

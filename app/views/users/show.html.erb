@@ -1,2 +1,24 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class='user-card'>
+  <div class='img wid' >
+    <img src=<%= @user.photo%> />
+  </div>
+  <div class='user-card img'>
+    <h1>User ID: <%= @user.id %> </h1>
+    <h2 class='user-container'>Name: <%= @user.name %> </h2>
+    <h3 class='user-count'>Number of posts:<%= @user.posts_counter%> </h3>
+  </div>
+</div>
+<article class='bio'>
+  <h4>Bio</h4>
+  <p><%= @user.bio %> </p>
+</article>
+<% @user.recent_posts.each_with_index do |post, index| %>
+    <div class='user-card bio'>
+    <a href='/users/<%= @user.id %>/posts'> <h3>Post # <%= index + 1 %></h3></a>
+    <h4><%= post.text %></h4>
+    <h5>Comments:<%= post.comments_counter %></h5>
+    <h5>Likes:<%= post.likes_counter %></h5>
+    </div>
+<% end %> 
+
+<button class='see'><%= link_to "See all Posts", user_posts_path(@user), {:class => "button_class"} %></button> 
