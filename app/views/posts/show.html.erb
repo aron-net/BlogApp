@@ -7,7 +7,7 @@
      </div>
     <h4><%= @post.text %></h4>
     <hr/>
-    <% @post.recent_comment.each do |comment| %>
+    <% @post.comment.each do |comment| %>
         <h5><%= comment.user.name %>: <%= comment.text %> </h5>
     <% end %>
 </div>
