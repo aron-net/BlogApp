@@ -1,2 +1,28 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>User ID: <%= @user.id %> </h1>
+<div class='user-card'>
+  <div class='img wid'>
+    <img src=<%= @user.photo%> alt='user_image'/>
+  </div>
+  <div class='user-card img'>
+    <h2>Name: <%= @user.name %> </h2>
+    <h3 class='user-container'>Number of posts:<%= @user.posts_counter%> </h3>
+  </div>
+</div>
+<% @user.post.each do |post| %>
+  <div class='bio font'><%= link_to user_post_path(@user.id, post.id) do %>
+    <a href='/users/<%= @user.id %>/posts/<%= post.id %>'><h4>#<%= post.id %></h4></a> 
+    <h4><%= post.text %></h4>
+    <div class='padd'>
+      <h5>Comments: <%= post.comments_counter %></h5>
+      <h5>Likes: <%= post.likes_counter %></h5>
+    </div>
+    <% end %>
+    <hr/>
+    <% post.recent_comment.each do |comment| %>
+      <h5><%= comment.user.name %>: <%= comment.text %> </h5>
+    <% end %>
+  </div>
+<% end %>
+
+<hr/>
+<button>Pagination</button>
