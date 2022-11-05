@@ -4,6 +4,7 @@
      <div class='padd'>
         <h5>Comments:<%= @post.comments_counter %></h5>
         <h5>Likes:<%= @post.likes_counter %></h5>
+        <%= render "likes/like" %>
      </div>
     <h4><%= @post.text %></h4>
     <hr/>
