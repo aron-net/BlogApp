@@ -6,7 +6,9 @@
     <h1>User ID: <%= @user.id %> </h1>
     <h2 class='user-container'>Name: <%= @user.name %> </h2>
     <h3 class='user-count'>Number of posts:<%= @user.posts_counter%> </h3>
+    <%= link_to "New Post", new_user_post_path(@user.id) %>
   </div>
+   
 </div>
 <article class='bio'>
   <h4>Bio</h4>
