@@ -4,11 +4,15 @@
      <div class='padd'>
         <h5>Comments:<%= @post.comments_counter %></h5>
         <h5>Likes:<%= @post.likes_counter %></h5>
+        <%= render "likes/like" %>
      </div>
     <h4><%= @post.text %></h4>
     <hr/>
     <% @post.comment.each do |comment| %>
         <h5><%= comment.user.name %>: <%= comment.text %> </h5>
     <% end %>
+   <div class="add-comment">
+      <h2>Add new comment</h2>
+      <%= render "comments/comment" %>
+    </div>
 </div>
-<a href='/users/'><button>Go back</button></a>

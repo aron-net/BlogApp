@@ -40,3 +40,4 @@ Post.create(user: User.find(5), title: 'Title 6', text: 'This is my post')
 
 
 Comment.create(post: Post.find(2), user: User.find(2), text: 'Hi Aron!' )
+Comment.create(post: Post.find(3), user: User.find(4), text: 'Hi Aron!' )
