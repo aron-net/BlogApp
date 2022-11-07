@@ -84,6 +84,12 @@ $ rspec spec/#{filename}_spec.rb
 - GitHub: [@Aaron](https://github.com/aron-helu)
 - LinkedIn: [@Aaron](https://www.linkedin.com/in/aron-abraham-90a4321b0/)  
 
+## Author :writing_hand:
+
+:man_technologist:  **Rodrigo Johann Reckziegel Nunes** :writing_hand: 
+
+- GitHub: [@Hannziegel](https://github.com/Hannziegel)
+- LinkedIn: [Rodrigo Johann Reckziegel Nunes](https://www.linkedin.com/in/rodrigojrnunes/)  
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!

@@ -8,7 +8,7 @@
      </div>
     <h4><%= @post.text %></h4>
     <hr/>
-    <% @post.comment.each do |comment| %>
+    <% @comments.includes([:user]).each do |comment| %>
         <h5><%= comment.user.name %>: <%= comment.text %> </h5>
     <% end %>
    <div class="add-comment">
