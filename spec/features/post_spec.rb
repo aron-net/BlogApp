@@ -53,22 +53,35 @@ RSpec.feature "Posts", type: :feature do
 
     describe "post/show" do
       before(:each) do
-        visit "/users/#{@user_one.id}"
+        visit "users/#{@user_one.id}/posts/#{@user_one.recent_posts[0].id}"
       end
 
       it "I can see the post's title." do
+        expect(page).to have_content(@post_one.title)
       end
+
       it "I can see who wrote the post." do
+        expect(page).to have_content(@post_one.user.name)
       end
+
       it "I can see how many comments it has." do
+        expect(page).to have_content(@post_one.comments_counter)
       end
+
       it "I can see how many likes it has." do
+        expect(page).to have_content(@post_one.likes_counter)
       end
+
       it "I can see the post body." do
+        expect(page).to have_content(@post_one.text)
       end
+
       it "I can see the username of each commentor." do
+        expect(page).to have_content(@comment_one.user.name)
       end
+
       it "I can see the comment each commentor left." do
+        expect(page).to have_content(@comment_one.text)
       end
     end
 end
