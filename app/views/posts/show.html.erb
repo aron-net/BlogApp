@@ -1,6 +1,6 @@
 <h1>Post Details</h1>
  <div class='bio font'>
-    <h4>Post:<%= @post.id %> by <%= @post.user.name %></h4> 
+    <h4>Post:<%= @post.id %> : <%= @post.title%> by <%= @post.user.name %></h4> 
      <div class='padd'>
         <h5>Comments:<%= @post.comments_counter %></h5>
         <h5>Likes:<%= @post.likes_counter %></h5>
