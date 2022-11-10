@@ -12,6 +12,8 @@ gem 'sprockets-rails'
 # Use Postgres as the database for Active Record
 gem 'pg'
 
+gem 'devise'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
@@ -62,7 +64,7 @@ group :development do
   gem 'web-console'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
-
+  gem "letter_opener"
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end

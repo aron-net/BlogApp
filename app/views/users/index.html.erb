@@ -1,17 +1,29 @@
+<div class="nav">
+  <%if user_admin_signed_in? %>
+    <%= button_to "Sing Out", 
+      destroy_user_admin_session_path,
+      method: :delete,
+      class: "nav-link"
+    %>
+  <% else %>
+    <%= link_to "Sing In",
+      new_user_admin_session_path,
+      class: "nav-link"
+    %>
+  <% end %>  
+</div>
 <div>
   <% @users.each do |user| %>
     <%= link_to user do%>
-    <div class='user-card'>
-    <div class='img container' >
-    <img src ='<%= user.photo %>' alt='user_image'  />
-    </div>
-    <div class='user-card img'>
-      <h2>Name: <%= user.name %></h2>
-      <h3 class='user-container'>Number of posts:<%= user.posts_counter %></h3>
-    </div>
-    </div>
+      <div class='user-card'>
+        <div class='img container' >
+          <img src ='<%= user.photo %>' alt='user_image'  />
+        </div>
+        <div class='user-card img'>
+          <h2>Name: <%= user.name %></h2>
+          <h3 class='user-container'>Number of posts:<%= user.posts_counter %></h3>
+        </div>
+      </div>
     <% end %>
-<% end %>
+  <% end %>
 </div>
-
-   

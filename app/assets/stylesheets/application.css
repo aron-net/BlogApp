@@ -86,3 +86,15 @@ button {
   margin-left: 50%;
   gap: 20px;
 }
+
+.nav-link {
+  background-color: rgb(110, 159, 216);
+  color: rgb(2, 0, 0);
+  border: 1px solid rgb(5, 5, 5);
+  border-radius: 30%;
+  font-size: 12px;
+  width: fit-content;
+  float: right;
+  padding: 10px;
+  margin: 20px;
+}
