@@ -19,9 +19,9 @@ class CommentsController < ApplicationController
           redirect_to user_post_path(@user.id, @post.id)
         else
           flash[:notice] = "Error: Couldn't create comment"
-          render :new, locals: {comment:}
+          render :new, locals: { comment: }
         end
-      end  
+      end
     end
   end
 
@@ -38,5 +38,5 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:text)
-  end  
+  end
 end
