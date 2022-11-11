@@ -6,13 +6,16 @@
     <h1>User ID: <%= @user.id %> </h1>
     <h2 class='user-container'>Name: <%= @user.name %> </h2>
     <h3 class='user-count'>Number of posts:<%= @user.posts_counter%> </h3>
-    <button class='see'><%= link_to "New Post", new_user_post_path(@user.id) %></button>
+    <%if can? :create, Post %>
+      <%= link_to "New Post", new_user_post_path(@user.id) %>
+    <% end %>  
   </div>
    
 </div>
 <article class='bio'>
   <h4>Bio</h4>
   <p><%= @user.bio %> </p>
+    
 </article>
 <% @user.recent_posts.each_with_index do |post, index| %>
     <div class='user-card bio'>

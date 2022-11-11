@@ -7,9 +7,17 @@
         <%= render "likes/like" %>
      </div>
     <h4><%= @post.text %></h4>
+    <div>
+         
+    </div>
     <hr/>
     <% @comments.includes([:user]).each do |comment| %>
         <h5><%= comment.user.name %>: <%= comment.text %> </h5>
+         <% if can? :destroy, comment %>
+            <%= form_with model: comment, url: user_post_comment_path(@user, @post, comment), method: :delete do |form| %>
+               <%= form.submit "Delete comment", class: "see" %>
+            <% end %>
+         <% end %>
     <% end %>
    <div class="add-comment">
       <h2>Add new comment</h2>

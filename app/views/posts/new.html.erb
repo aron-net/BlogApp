@@ -3,7 +3,7 @@
     <h1>New Post</h1>
   </div>
 
-  <%= form_with model: post, url: user_posts_path, method: :post, local: true do |f| %>
+  <%= form_with model: @post, url: user_posts_path, method: :post, local: true do |f| %>
     <div>
       <%= f.label :title, "Caption/Title"%><br>
       <%= f.text_field :title %>
