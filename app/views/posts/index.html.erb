@@ -10,13 +10,19 @@
 </div>
 <% @posts.each do |post| %>
   <div class='bio font'><%= link_to user_post_path(@user.id, post.id) do %>
-    <a href='/users/<%= @user.id %>/posts/<%= post.id %>'><h4>#<%= post.id %> : <%= post.title%></h4></a> 
-    <h4><%= post.text %></h4>
-    <div class='padd'>
-      <h5>Comments: <%= post.comments_counter %></h5>
-      <h5>Likes: <%= post.likes_counter %></h5>
-    </div>
+      <a href='/users/<%= @user.id %>/posts/<%= post.id %>'><h4>#<%= post.id %> : <%= post.title%></h4></a> 
+      <h4><%= post.text %></h4>
+      <div class='padd'>
+        <h5>Comments: <%= post.comments_counter %></h5>
+        <h5>Likes: <%= post.likes_counter %></h5>
+      </div>
     <% end %>
+    <% if can? :destroy, post %>
+      <%= form_with model: post, url: user_post_path(@user, post), method: :delete do |form| %>
+         <%= form.submit "Delete Post", class: "see" %>
+      <% end %>
+    <% end %>
+  
     <hr/>
     <% post.recent_comment.each do |comment| %>
       <h5><%= comment.user.name %>: <%= comment.text %> </h5>
