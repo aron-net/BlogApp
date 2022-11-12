@@ -1,15 +1,17 @@
 module Api
     module V1
-        class PostsController < ApplicationController 
+        class PostsController < ApplicationController
+            before_action :authenticate_user!
             def index
-                posts = Post.where(user_id: params[:user_id])
+                user = User.find(params[:user_id])
+                posts = user.posts.includes(comment: [:user])
                 render json: posts, status: :ok
             end
-            
+
             def show
                 post = Post.where(id: params[:id])
                 render json: post, status: :ok
             end
         end
     end
-end   
+end
